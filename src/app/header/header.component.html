@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-4 py-1 px-5">
       <a routerLink="/" class="navbar-brand">
-        <img src="../../assets/evista.png" height="60" alt="evista Logo">
+        <img src="../../assets/evista.png" height="60" alt="evista Logo" (click)="nav.visible = false">
       </a>
     </div>
-    <div class="col-6 py-1 px-5 align-items-center d-none">
+    <div class="col-6 py-1 px-5 align-items-center d-flex" *ngIf="nav.visible">
       <div class="px-2" style="color: white;">Deck size:</div>
       <div class="px-2 dropdown">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -17,7 +17,7 @@
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
-      <button class="px-2 btn btn-danger">START NEW GAME</button>
+      <button class="px-2 btn btn-danger" routerLink="/game">START NEW GAME</button>
     </div>
   </div>
 </div>
