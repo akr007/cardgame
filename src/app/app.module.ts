@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { GameComponent } from './game/game.component';
 import { RulesComponent } from './start/rules/rules.component';
 import { HeaderService } from './header/header.service';
+import { FormsModule } from '@angular/forms';
+import { StartService } from './start/start.service';
+import { GameItemComponent } from './game/game-item/game-item.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +18,15 @@ import { HeaderService } from './header/header.service';
     StartComponent,
     HeaderComponent,
     GameComponent,
-    RulesComponent
+    RulesComponent,
+    GameItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatCardModule
+    FormsModule
   ],
-  providers: [HeaderService],
+  providers: [HeaderService, StartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,18 +5,10 @@
         <button class="btn">RESTART</button>
     </div>
     <div class="row">
-        <div class="card" style="width: 13rem;">
-            <img class="card-img-top" src="../../assets/images/cards/angular.png" alt="Card image cap">
-        </div>
-        <div class="card" style="width: 13rem;">
-            <img class="card-img-top" src="../../assets/images/cards/angular.png" alt="Card image cap">
-        </div>
-        <div class="card" style="width: 13rem;">
-            <img class="card-img-top" src="../../assets/images/cards/angular.png" alt="Card image cap">
-        </div>
-        <div class="card" style="width: 13rem;">
-            <img class="card-img-top" src="../../assets/images/cards/angular.png" alt="Card image cap">
-        </div>
+        <app-game-item 
+        *ngFor="let item of ' '.repeat(num).split(''), let x = index"
+        ></app-game-item>
     </div>
 </div>
 
+{{ num }}

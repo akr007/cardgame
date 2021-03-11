@@ -5,17 +5,14 @@
         <img src="../../assets/evista.png" height="60" alt="evista Logo" (click)="nav.visible = false">
       </a>
     </div>
-    <div class="col-6 py-1 px-5 align-items-center d-flex" *ngIf="nav.visible">
+    <div class="col-6 py-1 px-5 align-items-center d-flex" *ngIf="nav.visible" >
       <div class="px-2" style="color: white;">Deck size:</div>
       <div class="px-2 dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          0
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+        <select [(ngModel)]="num">
+          <option *ngFor="let o of displayColumns">
+             {{o}}
+          </option>
+       </select>
       </div>
       <button class="px-2 btn btn-danger" routerLink="/game">START NEW GAME</button>
     </div>
