@@ -18,5 +18,7 @@ export class Game {
     {id: 16, name: "ts", imagePath: "../../assets/images/cards/ts.png"},
     {id: 17, name: "webpack", imagePath: "../../assets/images/cards/webpack.png"},
     {id: 18, name: "webpack", imagePath: "../../assets/images/cards/webpack.png"},
+    {id: 19, name: "evista", imagePath: "../../assets/images/cards/evista.png"},
+    {id: 20, name: "evista", imagePath: "../../assets/images/cards/evista.png"},
   ];
 }

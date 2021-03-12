@@ -11,9 +11,7 @@ import { StartService } from './start.service';
 })
 export class StartComponent implements OnInit {
 
-  constructor(private router: Router,
-    private _startService: StartService,
-    private _headerService: HeaderService,
+  constructor(private _startService: StartService,
     private gameModel: Game) { }
 
   ngOnInit(): void {
@@ -24,10 +22,10 @@ export class StartComponent implements OnInit {
 
   public addItem(){
     this._startService.addItem(this.selectedOption);
-    this._headerService.setNumber(this.selectedOption);
     localStorage.setItem('size', JSON.stringify(this.selectedOption));
     let shuffled = this.gameModel.images.sort(() => Math.random() - 0.5);
     localStorage.setItem('array', JSON.stringify(shuffled));
+    console.log(localStorage);
   }
 
 

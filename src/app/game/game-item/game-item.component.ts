@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Game } from '../game.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Game } from '../game.model';
   templateUrl: './game-item.component.html',
   styleUrls: ['./game-item.component.scss']
 })
-export class GameItemComponent implements OnInit {
+export class GameItemComponent implements OnInit, OnChanges {
   num!: number;
   shuffled!: [];
 
@@ -15,7 +15,12 @@ export class GameItemComponent implements OnInit {
   ngOnInit(): void {
     this.shuffled = JSON.parse(localStorage.getItem('array')!);
     console.log(this.shuffled);
-    console.log(this.gameModel.images);
+    this.gameModel.images = this.shuffled;
+    this.num = JSON.parse(localStorage.getItem('size')!);
+    console.log(this.num);
+  }
+
+  ngOnChanges(){
     this.num = JSON.parse(localStorage.getItem('size')!);
     console.log(this.num);
   }
