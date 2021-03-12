@@ -1,7 +1,6 @@
-import { Component, OnInit,  } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnDestroy, OnInit,  } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { HeaderService } from '../header/header.service';
-import { StartService } from '../start/start.service';
 
 @Component({
   selector: 'app-game',
@@ -10,8 +9,7 @@ import { StartService } from '../start/start.service';
 })
 export class GameComponent implements OnInit {
 
-  constructor(public nav: HeaderService,
-    private _startService: StartService) {
+  constructor(public nav: HeaderService) {
   }
 
   num!: number;
@@ -23,8 +21,5 @@ export class GameComponent implements OnInit {
     console.log(this.num);
   }
 
-  numSequence(n: number): Array<number> { 
-    return Array(n); 
-  } 
 
 }

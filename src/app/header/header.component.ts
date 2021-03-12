@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
     private _startService: StartService) {}
 
   
-  num: number =  3;
+  num: number =  6;
 
   ngOnInit(): void {
     
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   selectedOption!: number;
-  displayColumns: number[] =   [3, 4, 5, 6, 7, 8, 9, 10];
+  displayColumns: number[] =   [6, 8, 10, 12, 14, 16, 18, 20];
 
   public addItem(){
     this._startService.addItem(this.selectedOption);

@@ -11,6 +11,7 @@ import { HeaderService } from './header/header.service';
 import { FormsModule } from '@angular/forms';
 import { StartService } from './start/start.service';
 import { GameItemComponent } from './game/game-item/game-item.component';
+import { Game } from './game/game.model';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { GameItemComponent } from './game/game-item/game-item.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [HeaderService, StartService],
+  providers: [HeaderService, StartService, Game],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
