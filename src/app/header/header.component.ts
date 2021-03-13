@@ -36,6 +36,15 @@ export class HeaderComponent implements OnInit{
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate([currentUrl]);
     });
+    
+    for(let i=0;i<this.gameModel.images.length;i++) {
+      let card = this.gameModel.images.findIndex(x=>x.hidden == 1);
+      if(card != -1) {
+        let cardItem = this.gameModel.images[card];
+        cardItem.hidden == 1 ? cardItem.hidden = 0 : cardItem.hidden = 1;
+        localStorage.setItem('array', JSON.stringify(this.gameModel.images));
+      }
+    }
   }
 
 
